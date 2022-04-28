@@ -8,10 +8,21 @@
 
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/styleLogin.css" />
+    <link rel="stylesheet" href="./css/preloader.css" />
     <link rel="stylesheet" href="./css/styleModal.css" />
   </head>
 
   <body>
+    <div id="preloader">
+      <div class="inner">
+        <!-- HTML DA ANIMAÇÃO MUITO LOUCA DO SEU PRELOADER! -->
+        <div class="bolas">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
     <header>
       <nav>
         <div class="logo"></div>
@@ -79,11 +90,19 @@
   </body>
 </html>
 
+<script src="./js/changeScreens.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js//preloader.js"></script>
+
 <script>
   //  function remember() {
   //      var inputRemember = document.getElementById(rememberInput)
   //      inputRemember.disable = "true"
   //  }
+
+  var loggIn = Number(sessionStorage.getItem("ID_USUARIO"));
+
+  loggIn > 0 ? inLoggin() : null;
 
   function buttonBack() {
     modal.style.display = "none";
@@ -106,8 +125,10 @@
       }),
     }).then((response) => {
       response.json().then((json) => {
-        const idUser = json.resultado[0].ID_Usuario;
+        console.log(json);
         if (json.mensagem == "success") {
+          const idUser = json.resultado[0].ID_Usuario;
+
           sessionStorage.ID_USUARIO = idUser;
           modal.style.display = "block";
           campo_alerta.innerHTML = "Login efetuado com sucesso!";

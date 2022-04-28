@@ -4,16 +4,13 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-body {
-    font-family: 'Poppins', sans-serif;
-    
-}
+
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
 }
 .login {
-    padding-top: 4%;
+    padding-top: 10%;
     width: 100%;
     height: flex;
     background: url('../assets/backgroundSignUp.svg') no-repeat;
@@ -26,14 +23,16 @@ input[type=number] {
 }
 
 form {
-    
+   
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 30%;
     margin-top: 5%;
     margin-bottom: 4%;
-    
+}
+form h1 {
+    color: #0099FF;
 }
 
 form h3 {
@@ -41,44 +40,43 @@ form h3 {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    
-    color: #000000;
+    color: white;
 }
 form .left {
     margin-top: 10%;
     display: flex;
-    margin-left: 1%;
+    margin-left: 3%;
     align-self: flex-start;
 }
 form .inputLogin   {
     width: 28vw;
     height: 9vh;
-    border: 1px solid #0099FF;
+    border: 2px solid #0099FF;
     box-sizing: border-box;
     border-radius: 5px;
     text-align: center;
     font-size: 26px;
 }
-
-form .inputPassword  {
+form .inputPassword   {
     width: 28vw;
     height: 9vh;
-    border: 1px solid #0099FF;
+    border: 2px solid #0099FF;
     box-sizing: border-box;
     border-radius: 5px;
     text-align: center;
     font-size: 26px;
 }
 .row3 {
-    width: 60%;
+    width: 90%;
     display: flex;
-    justify-content:left;
-    align-items: left;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 4%;
+    color:#0099FF;
 }
-.divRadio {
-    width: 100%;
-}
+
+
 .button5 {
     margin-top: 8%;
     width: 20vw;
